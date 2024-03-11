@@ -1,0 +1,194 @@
+.worldImgWrapper {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+}
+  
+.popup {
+    height: 180px;
+    position: absolute;
+    display: flex;
+}
+  
+.targetBox {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    border: 3px solid #ff160c;
+    border-radius: 50px;
+    background-color: rgba(31, 79, 255, 0.5);
+}
+  
+.characterBox {
+    width: 150px;
+    border-radius: 5px;
+    background-color: #11171d;
+}
+  
+.character {
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.1s ease-out;
+}
+  
+.correctAnswerPopup,
+.wrongAnswerPopup {
+    position: fixed;
+    height: max-content;
+    width: max-content;
+    top: 170px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+    color: white;
+    padding: 20px;
+}
+  
+.correctAnswerPopup {
+    background-color: #008000;
+}
+  
+.wrongAnswerPopup {
+    background-color: #ff0000;
+}
+  
+.hidden {
+    display: none;
+}
+  
+.visible {
+    display: visible;
+    position: absolute;
+    padding: 10px;
+}
+  
+.playerInput {
+    position: fixed;
+    width: 300px;
+    height: max-content;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 5px;
+    background-color: #11171d;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+  
+form {
+    flex: 1;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto min-content;
+}
+  
+.formScoreGroup {
+    display: flex;
+    flex-direction: column;
+}
+  
+.addPlayerBtn {
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #008000;
+    margin-top: 15px;
+    padding: 10px 30px;
+    align-self: self-end;
+    transition: all 0.2s ease-in-out;
+}
+  
+.errorMsg {
+    color: #ee4444;
+}
+  
+input {
+    height: 35px;
+    font-size: 1rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #11171d;
+    padding: 0px 5px;
+}
+  
+.formScoreGroup:nth-child(1) label {
+    padding: 10px 0px;
+    align-self: center;
+}
+  
+.playerInput h3 {
+    font-size: 1.25rem;
+    color: #00cd00;
+}
+  
+form span {
+    padding: 5px 0px;
+    font-size: 14px;
+}
+  
+.worldImgWrapper img {
+    max-width: 100%;
+}
+  
+.character img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+  
+.visible img {
+    height: 30px;
+    width: 30px;
+}
+  
+.popup img,
+.popup h4 {
+    pointer-events: none;
+}
+  
+.popup .character:hover {
+    background-color: #3d2431;
+}
+  
+.addPlayerBtn:hover {
+    background-color: #006700;
+}
+  
+input:focus {
+    border: none;
+    outline-color: #00cd00;
+}
+  
+@media (max-width: 600px) {
+    .targetBox,
+    .popup,
+    .visible,
+    .correctAnswerPopup,
+    .wrongAnswerPopup,
+    .playerInput {
+      transform: scale(0.8);
+    }
+}
+  
+@media (max-width: 450px) {
+    .targetBox,
+    .popup,
+    .visible,
+    .correctAnswerPopup,
+    .wrongAnswerPopup,
+    .playerInput {
+      transform: scale(0.6);
+    }
+}
